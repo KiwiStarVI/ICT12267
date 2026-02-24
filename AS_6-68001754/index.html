@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="League of Legends fan website with gallery, features and fan score system">
+<title>League of Legends Fanpage</title>
+<link rel="stylesheet" href="web.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">LoL Fanpage</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#features">Features</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>League of Legends</h1>
+        <p>Experience the ultimate MOBA battle</p>
+        <button onclick="window.open('https://www.leagueoflegends.com/th-th/','_blank')">
+            Play Now
+        </button>
+    </div>
+</section>
+
+<section id="about" class="intro">
+    <h2>เกี่ยวกับเกม</h2>
+    <p>
+        เกม MOBA ระดับโลกจาก Riot Games
+        ที่ต้องใช้ทั้งกลยุทธ์และทีมเวิร์คเพื่อคว้าชัยชนะ
+    </p>
+</section>
+
+<section id="gallery" class="gallery">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0mxMNycLHnTIhXpEEERCt708YtXLsfkoTSSiZ1GqZW6hEqEpU2jnu_UztaezcK4hoa-k_RR9CYelxKtraXtjaxE4iqhJz_7gCNb2ROadcO0IwqdtpwjJOzdK0XxLrgGMWL2Fy55SHCpEqUy3kZEpoHV905UWZGxnYSIw6JGRp02hm43kUrgIxKwt2Cg/s3840/4-k-pc-wallpaper-league-of-legends-fan-art-gwen.jpg">
+    <img src="https://wallpapers.com/images/high/4k-lol-darius-with-red-axe-wnfcan3xiz0s26l1.webp">
+    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_31.jpg">
+    <img src="https://www.buff.game/wp-content/uploads/2021/05/garen-1024x604.jpg">
+    <img src="https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/drmundo/skins/skin03/images/drmundo_splash_centered_3.jpg">
+    <img src="https://images5.alphacoders.com/127/thumb-1920-1274050.jpg">
+</section>
+
+<section id="features" class="cards">
+    <div class="card">
+        <h3>Champions</h3>
+        <p>มากกว่า 160 ตัวละคร</p>
+    </div>
+    <div class="card">
+        <h3>Rank System</h3>
+        <p>Iron → Challenger</p>
+    </div>
+    <div class="card">
+        <h3>Worlds</h3>
+        <p>การแข่งขันระดับโลกทุกปี</p>
+    </div>
+    <div class="card">
+        <h3>Team Strategy</h3>
+        <p>เกมที่ต้องใช้การวางแผนขั้นสูง</p>
+    </div>
+</section>
+
+<section class="plus">
+    <h2>Fan Score</h2>
+    <button id="likeBtn">⭐ เพิ่มคะแนน</button>
+    <p id="likeCount">0 คะแนน</p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>ช่องทางติดต่อ</h2>
+
+    <div class="contact-info">
+        <p><strong>ชื่อ:</strong> นาย วรฤทธิ์ สุณาวงษ์ 68001754 </p>
+        <p><strong>Email:</strong> worarit.sun@spumail.net</p>
+        <p><strong>Facebook:</strong> <a href="https://facebook.com/yourprofile" target="_blank">facebook.com/giwi.guji</a></p>
+        <p><strong>Discord:</strong> kiwistarvi</p>
+    </div>
+</section>
+
+<footer>
+    <h3>League of Legends Fan Website</h3>
+    <p>© 2410/2 ถนนพหลโยธิน แขวงเสนานิคม เขตจตุจักร กรุงเทพมหานคร 10900</p>
+    <div class="social">
+        <a href="#">facebook</a>
+        <a href="#">YouTube</a>
+        <a href="#">Instagram</a>
+    </div>
+</footer>
+<button id="topBtn">^</button>
+<script>
+    let score = 0;
+    
+    const likeBtn = document.getElementById("likeBtn");
+    const likeCount = document.getElementById("likeCount");
+    const navbar = document.querySelector(".navbar");
+    const topBtn = document.getElementById("topBtn");
+    
+    likeBtn.addEventListener("click", function(){
+        score++;
+        likeCount.innerText = score + " คะแนน";
+    });
+    
+    window.addEventListener("scroll", function(){
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+        topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    
+    topBtn.addEventListener("click", function(){
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+    </script>
+</body>
+</html>
