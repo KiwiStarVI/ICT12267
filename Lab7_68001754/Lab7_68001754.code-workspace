@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "Lab7_68001754",
+			"path": "."
+		},
+		{
+			"name": "VDO",
+			"path": "../VDO"
+		},
+		{
+			"name": "CSS and JS",
+			"path": "../CSS and JS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Lab7_68001754"
+	}
+}
